@@ -1,0 +1,12 @@
+{
+  "best_value": 0.0007470431153244714,
+  "best_params": {
+    "embedding_dim": 64,
+    "num_embeddings": 128,
+    "commitment_cost": 1.0,
+    "lr": 0.0019391108740040258,
+    "batch_size": 64,
+    "encoder_depth": 3,
+    "base_channels": "standard"
+  }
+}
