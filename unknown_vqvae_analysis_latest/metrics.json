@@ -1,0 +1,29 @@
+{
+  "recon_error_mean": 0.0004376580473035574,
+  "recon_error_std": 0.0005982967559248209,
+  "recon_error_p25": 0.00014126797032076865,
+  "recon_error_p50": 0.00021219137124717236,
+  "recon_error_p75": 0.0004063450905960053,
+  "codebook_unique_used": 100,
+  "codebook_usage_frac": 0.78125,
+  "codebook_entropy": 3.061946327903824,
+  "codebook_entropy_pct": 63.10649689621456,
+  "latent_mean_dim_var": 0.004372077994048595,
+  "latent_mean_pairwise_d": 0.5397763848304749,
+  "final_recon_loss": 0.00043556216217693655,
+  "final_perplexity": 20.924695137050325,
+  "best_params": {
+    "embedding_dim": 64,
+    "num_embeddings": 128,
+    "commitment_cost": 1.0,
+    "lr": 0.0019391108740040258,
+    "batch_size": 64,
+    "encoder_depth": 3,
+    "base_channels": "standard"
+  },
+  "silhouette_vq_clusters": -0.17200155556201935,
+  "silhouette_error_bands": 0.0729922205209732,
+  "silhouette_n_subsample": 8000,
+  "silhouette_n_vq_clusters": 5,
+  "silhouette_feature_space": "quantised latents (64-d, standardised)"
+}

@@ -1,0 +1,56 @@
+
+VQ-VAE Analysis Summary
+======================================================================
+
+Dataset : data/unknown_data_after_noise_filter.parquet
+Samples : 69938  |  Spectrum length : 1000
+Labels  : True
+
+Preprocessing:
+  Savitzky-Golay (window=11, order=3)
+  + log1p + min-max normalisation
+
+Optuna Search (20 trials x 20 warm-up epochs each):
+  Best trial  : #-1
+  Best value  : 0.000436
+  Best params : {'embedding_dim': 64, 'num_embeddings': 128, 'commitment_cost': 1.0, 'lr': 0.0019391108740040258, 'batch_size': 64, 'encoder_depth': 3, 'base_channels': 'standard'}
+
+Final Training (50 epochs):
+  Final recon loss : 0.000436
+  Final VQ loss    : 0.000000
+  Final perplexity : 20.92
+
+Reconstruction Error:
+  Mean : 0.000438 +/- 0.000598
+  P25  : 0.000141
+  P50  : 0.000212
+  P75  : 0.000406
+
+Codebook Utilisation:
+  100 / 128 (78.1%)
+  Entropy: 3.0619 / 4.8520 (63.1%)
+
+Latent Space (UMAP n_neighbors=30, min_dist=0.1):
+  Mean dim-variance  : 0.004372
+  Mean pairwise dist : 0.5398
+
+Output Files (all in outputs/unknown_vqvae/unknown_vqvae_analysis_20260310_232910/):
+  04_training_curves.png
+  05_reconstruction_errors.png
+  06_umap_recon_error.png            <- UMAP coloured by MSE
+  06c_tsne_recon_error.png           <- t-SNE coloured by MSE
+  06d_umap_vs_tsne.png               <- side-by-side comparison
+  07_band*_spectra.png               <- sample spectra per error band
+  08_band_average_spectra.png
+  09_reconstruction_overlays.png     <- original vs reconstructed
+  10_residual_plots.png              <- residuals best/median/worst
+  11_band_reconstruction_overlay.png <- mean+/-SD recon per band
+  vqvae_model.pth
+  metrics.json
+  analysis_data.npz
+  latent_assignments.csv
+
+Optuna study in: outputs/unknown_vqvae/optuna_study_20260310_232910/
+  best_params.json
+  all_trials.csv
+  optuna_history.png
